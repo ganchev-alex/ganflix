@@ -1,0 +1,121 @@
+@use "../../scss/util" as u;
+
+.slot {
+  width: 100%;
+  height: u.em(200px);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+
+  &__thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 87.5%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+  }
+
+  &:hover &__thumb {
+    transform: scale(1.1);
+  }
+
+  &:hover {
+    button {
+      transform: rotate(-15deg);
+    }
+
+    div {
+      bottom: 0;
+    }
+  }
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: -27.5px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: u.em(10px) u.em(25px);
+  color: u.$text-primary;
+  transition: all 0.4s ease;
+
+  &__play {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background: rgba(217, 219, 219, 0.25);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15.2px);
+    -webkit-backdrop-filter: blur(15.2px);
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    & img {
+      width: 17.5px;
+      height: 17.5px;
+      margin: u.em(10px);
+      filter: invert(100%);
+    }
+  }
+
+  &__title {
+    width: 50%;
+
+    h6 {
+      font-size: u.rem(17px);
+      font-weight: 300;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      text-wrap: nowrap;
+    }
+
+    p {
+      font-size: u.rem(13.5px);
+      font-weight: 300;
+      color: u.$text-secondary;
+    }
+  }
+
+  &__duration {
+    height: fit-content;
+    width: fit-content;
+    background-color: u.$text-primary;
+    color: u.$background-primary;
+    font-size: u.rem(15px);
+    font-weight: 500;
+    padding: u.em(5px) u.em(15px);
+    border-radius: 50px;
+  }
+
+  &__metadata {
+    width: 100%;
+    font-size: u.rem(15px);
+    margin-top: u.em(10px, 15px);
+    color: u.$text-secondary;
+    font-weight: 300;
+
+    & b {
+      color: u.$text-primary;
+      font-weight: 600;
+    }
+  }
+}

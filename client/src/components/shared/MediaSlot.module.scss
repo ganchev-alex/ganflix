@@ -1,0 +1,218 @@
+@use "../../scss/util" as u;
+
+.container {
+  height: u.em(300px);
+  width: u.em(200px);
+  position: relative;
+  border-radius: 15px;
+}
+
+.slot {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+  cursor: pointer;
+
+  &__poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+
+  &:hover &__data {
+    opacity: 1;
+    transform: scale(1) translateY(-50%);
+  }
+}
+
+.details {
+  display: flex;
+  width: 150%;
+  height: 120%;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 15px;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6), 0px 6px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+
+  &__bridge {
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+  }
+
+  &--left {
+    right: 107%;
+  }
+
+  &--right {
+    left: 107%;
+  }
+
+  &__thumb {
+    height: 40%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: u.rem(18px);
+    color: u.$text-primary;
+    margin: u.em(7.5px) 0 u.em(3px) u.em(14px);
+    font-weight: 500;
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: u.em(7.5px);
+    margin: u.em(5px) 0 u.em(12.5px) u.em(17.5px);
+    font-size: u.rem(14px);
+    color: u.$text-primary;
+    font-weight: 300;
+
+    & p {
+      height: fit-content;
+      width: fit-content;
+      padding: u.em(2.5px, 14px) u.em(12.5px, 14px);
+      border-radius: 7.5px;
+      background: rgba(112, 113, 116, 0.4);
+    }
+  }
+
+  &__data {
+    margin: u.em(5.5px) 0 u.em(2px) u.em(17.5px);
+    font-size: u.em(15px);
+    font-weight: 400;
+    color: u.$text-secondary;
+
+    & span {
+      color: u.$subtitle;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: fit-content;
+    margin: u.em(15px) u.em(14px) 0 u.em(14px);
+    gap: u.em(15px);
+
+    & button {
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: u.em(10px);
+      font-size: u.rem(14.5px);
+      font-weight: 500;
+      color: u.$text-primary;
+      border: none;
+      outline: none;
+      background: rgba(112, 113, 116, 0.4);
+      transition: all 0.2s ease-out;
+
+      & img {
+        width: 16.5px;
+        height: 16.5px;
+        filter: invert(100%);
+      }
+
+      &:hover {
+        filter: brightness(150%);
+      }
+    }
+
+    & button:first-child {
+      border-radius: 15px;
+      gap: u.em(7.5px);
+      flex-grow: 1;
+    }
+
+    & button:last-child {
+      border-radius: 50px;
+      border: none;
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.listings {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: u.em(15px);
+  background-color: u.$fields-background;
+  gap: u.em(15px);
+  border-radius: 15px;
+
+  & button {
+    width: 100%;
+    height: fit-content;
+    font-size: u.rem(16.5px);
+    display: flex;
+    gap: u.em(15px);
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: u.$text-primary;
+    transition: all 0.2s ease;
+
+    & img {
+      height: 20px;
+      width: 20px;
+      filter: invert(100%);
+    }
+  }
+
+  &--active {
+    opacity: 0.99;
+    margin-left: u.em(2.5px);
+
+    & img {
+      transform: rotate(-9deg);
+    }
+  }
+
+  &--disabled {
+    opacity: 0.4;
+
+    & img {
+      transform: none;
+    }
+  }
+
+  &__filter {
+    width: 100%;
+    height: 500%;
+    position: absolute;
+    top: -250%;
+    left: 0;
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+  }
+}

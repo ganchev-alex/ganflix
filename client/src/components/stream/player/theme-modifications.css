@@ -1,0 +1,28 @@
+.vjs-theme-forest {
+  --vjs-theme-forest--primary: #ffd95c !important; /* New color */
+}
+
+.vjs-theme-forest.vjs-big-play-button,
+.vjs-theme-forest .vjs-big-play-button {
+  background-color: transparent;
+  background: url("../../../assets/images/play_button-inactive.png") !important;
+}
+
+.vjs-theme-forest.vjs-big-play-button:focus,
+.vjs-theme-forest:hover .vjs-big-play-button {
+  background-color: transparent;
+  background: url("../../../assets/images/play_button-active.png") !important;
+}
+
+.vjs-playback-rate > .vjs-menu-button,
+.vjs-playback-rate .vjs-playback-rate-value {
+  top: 20% !important;
+}
+
+.vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+  bottom: 30px !important;
+}
+
+.video-js .vjs-control-bar {
+  background-color: transparent;
+}

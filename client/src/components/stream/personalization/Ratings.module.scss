@@ -1,0 +1,129 @@
+@use "../../../scss/util" as u;
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: u.em(10px) 0;
+  margin: u.em(10px) 0 u.em(20px);
+  border-top: #7071746a 1.5px solid;
+  border-bottom: #7071746a 1.5px solid;
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: u.em(7.5px);
+
+  & * {
+    font-size: u.rem(17px);
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: u.em(5.5px) u.em(7.5px) u.em(7.5px);
+    gap: u.em(6.5px);
+
+    & input {
+      background-color: transparent;
+      text-align: center;
+      width: 75px;
+      border-radius: 15px;
+      outline: none;
+      border: none;
+      margin-bottom: -3px;
+      padding: u.em(5px) u.em(15px);
+      font-family: u.$font;
+      font-weight: 500;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &:focus + p {
+        transform: rotate(-15deg) scale(1.1);
+      }
+    }
+
+    & p {
+      font-size: u.em(20px);
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__adding {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: u.em(10px);
+    width: fit-content;
+    height: fit-content;
+
+    & button {
+      padding: u.em(5.5px) u.em(12.5px);
+      border-radius: 15px;
+      outline: none;
+      border: none;
+      background-color: u.$fields-background;
+      color: u.$text-primary;
+      letter-spacing: 0.4px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        filter: brightness(150%);
+      }
+    }
+  }
+
+  &__list {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: u.em(12.5px);
+    margin: u.em(12.5px) u.em(6px);
+
+    & li {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: u.em(12.5px);
+      font-size: u.rem(18px);
+      color: u.$text-secondary;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      & img {
+        width: 27.5px;
+        height: 27.5px;
+        filter: invert(60%);
+        transition: all 0.3s ease;
+      }
+    }
+
+    & li:hover {
+      color: u.$text-primary;
+
+      & img {
+        transform: rotate(-9.5deg);
+        filter: invert(100%);
+      }
+    }
+
+    &--active {
+      color: u.$text-primary !important;
+      margin-left: u.em(7.5px);
+
+      & img {
+        filter: invert(100%) !important;
+      }
+    }
+  }
+}

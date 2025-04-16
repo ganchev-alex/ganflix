@@ -1,0 +1,44 @@
+@use "../../../scss/util" as u;
+
+.container {
+  width: 27%;
+  height: 100%;
+  margin: 0 u.em(125px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__poster {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 17.5px;
+  }
+
+  &__backlight {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 120%;
+    filter: blur(60px);
+  }
+}
+
+.swiper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98.5%;
+    width: 100%;
+  }
+}

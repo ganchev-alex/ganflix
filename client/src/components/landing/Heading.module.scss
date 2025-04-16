@@ -1,0 +1,165 @@
+@use "../../scss/util" as u;
+
+.header {
+  width: 100%;
+  position: relative;
+
+  &__backligth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: u.em(600px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(50px);
+    opacity: 0.65;
+  }
+}
+
+.ribbon {
+  width: 97.5%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: u.em(10px) auto u.em(17.5px);
+  position: relative;
+  z-index: 2;
+
+  &__logo {
+    width: 10%;
+    height: 100%;
+    filter: brightness(1000%);
+  }
+
+  &__profile {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: u.em(20px);
+    padding: 0 u.em(5px);
+
+    & img {
+      width: 52.5px;
+      height: 52.5px;
+      border-radius: 50px;
+    }
+
+    & button {
+      width: fit-content;
+      height: fit-content;
+      background-color: transparent;
+      outline: none;
+      border: none;
+
+      & img {
+        width: 30px;
+        height: 30px;
+        filter: invert(100%);
+      }
+    }
+  }
+}
+
+.slider-wrapper {
+  width: 97.5%;
+  // height: u.em(475px);
+  height: 55vh;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 17.5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6), 0px 6px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: u.em(50px);
+}
+
+.loading-plane {
+  position: relative;
+  z-index: 1;
+  width: 97.5%;
+  height: u.em(475px);
+  margin: 0 auto;
+  border-radius: 17.5px;
+  margin-bottom: u.em(50px);
+  background: rgba(17, 17, 17, 0.5);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6), 0px 6px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  overflow: hidden;
+
+  &__trigger {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(62, 61, 71, 0.8),
+      transparent
+    );
+    animation: loading 1.25s infinite;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: skewX(-10deg) translateX(-100%);
+  }
+  100% {
+    transform: skewX(-10deg) translateX(200%);
+  }
+}
+
+.skeleton {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: u.em(15px);
+  padding-left: u.em(30px);
+  position: relative;
+
+  & div {
+    background: rgba(30, 30, 30, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 9px;
+    overflow: hidden;
+  }
+
+  &__title {
+    height: u.em(43.5px);
+    width: 80%;
+  }
+
+  &__attributes {
+    height: u.em(20px);
+    width: 60%;
+  }
+
+  &__description {
+    height: u.em(150px);
+    width: 85%;
+  }
+
+  &__poster {
+    width: 32.5%;
+    height: 115%;
+    position: absolute;
+    right: 14%;
+    top: 50%;
+    transform: rotate(13.5deg) translateY(-50%);
+    border-radius: 12.5px;
+    background: rgba(30, 30, 30, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,22 @@
+@use "sass:math";
+
+@function rem($pixels) {
+  @if math.is-unitless($pixels) {
+    @return math.div($pixels, 16) + rem;
+  } @else if unit($pixels) == "px" {
+    @return math.div($pixels, 1px) / 16 + rem;
+  } @else {
+    @error "The provided value must be unitless or in pixels (px).";
+  }
+}
+
+@function em($pixels, $base-font-size: 16px) {
+  @if math.is-unitless($pixels) and math.is-unitless($base-font-size) {
+    @return math.div($pixels, $base-font-size) + em;
+  } @else if unit($pixels) == "px" and unit($base-font-size) == "px" {
+    @return math.div(math.div($pixels, 1px), math.div($base-font-size, 1px)) +
+      em;
+  } @else {
+    @error "The provided values must be unitless or in pixels (px).";
+  }
+}

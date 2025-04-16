@@ -1,0 +1,145 @@
+@use "../../scss/util/" as u;
+
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: u.$base;
+  z-index: 10;
+  opacity: 0.3;
+}
+
+.dev {
+  position: fixed;
+  width: 85%;
+  height: 87.5%;
+  z-index: 15;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  background: rgba(18, 18, 18, 0.7);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  overflow: hidden;
+  padding: u.em(35px);
+
+  &__nav {
+    width: 30%;
+    height: 100%;
+    border-right: u.$subtitle 1px solid;
+    display: flex;
+    flex-direction: column;
+    gap: u.em(15px);
+    padding-right: u.em(35px);
+    position: relative;
+
+    & h4 {
+      font-size: u.rem(26px);
+      color: u.$text-primary;
+      font-weight: 500;
+      margin-bottom: u.rem(20px);
+    }
+  }
+
+  &__hubs {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: u.em(20px);
+    align-items: center;
+    padding: u.em(10px) u.em(20px);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    color: u.$text-primary;
+    font-size: u.rem(20px);
+    font-family: u.$font;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    & img {
+      width: 40px;
+      height: 40px;
+      filter: invert(100%);
+      transition: all 0.3s ease;
+    }
+
+    &--active {
+      color: u.$base;
+
+      & img {
+        filter: invert(0%);
+        transform: rotate(-7.5deg);
+      }
+    }
+  }
+
+  &__main {
+    height: 100%;
+    width: 70%;
+    position: relative;
+    padding-left: u.em(35px);
+    overflow-y: scroll;
+    overflow-x: visible;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    h3 {
+      font-size: u.rem(26px);
+      color: u.$text-primary;
+      font-weight: 500;
+      margin-bottom: u.em(10px);
+    }
+  }
+
+  &__backlight--nav {
+    position: absolute;
+    bottom: -35%;
+    left: -50%;
+    width: 500px;
+    height: 500px;
+    filter: blur(30px);
+    border-radius: 100px;
+    opacity: 0.15;
+    z-index: -2;
+  }
+
+  &__backlight--main {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 750px;
+    height: 750px;
+    transform: translateY(-50%);
+    filter: blur(60px);
+    border-radius: 100px;
+    opacity: 0.1;
+    z-index: -2;
+  }
+}
+
+.notification {
+  width: 25%;
+  height: fit-content;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: u.em(12.5px) u.em(15px);
+  font-size: u.rem(19px);
+  border-radius: 15px;
+  bottom: 5%;
+  font-weight: 400;
+  cursor: pointer;
+}

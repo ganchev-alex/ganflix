@@ -1,0 +1,135 @@
+@use "../../scss/util" as u;
+
+.wrapper {
+  margin-bottom: u.em(35px);
+  border-bottom: u.$text-primary 1px solid;
+  position: relative;
+  overflow: visible;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: u.em(12.5px);
+
+  &__label {
+    height: fit-content;
+    font-size: u.rem(18px);
+    color: u.$text-primary;
+    letter-spacing: 0.6px;
+    font-weight: 400;
+    margin-top: u.em(15px);
+    width: 100%;
+  }
+
+  &__genre {
+    width: fit-content;
+    height: fit-content;
+    padding: u.em(7.5px) u.em(12.5px);
+    border: u.$text-primary 1px solid;
+    font-size: u.rem(18px);
+    font-weight: 500;
+    font-family: u.$font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13.5px;
+
+    &--active {
+      color: u.$base;
+      background-color: u.$text-primary;
+    }
+
+    &--disabled {
+      background-color: transparent;
+      color: u.$text-primary;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: u.em(40px) 0 u.em(25px);
+
+  gap: u.em(15px);
+
+  & button {
+    font-size: u.rem(19px);
+    padding: u.em(6.5px) u.em(15px);
+    border-radius: 9px;
+    outline: none;
+    border: u.$text-primary 2px solid;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &__clear {
+    background-color: transparent;
+    color: u.$text-primary;
+  }
+
+  &__add {
+    background-color: u.$text-primary;
+    color: u.$base;
+  }
+}
+
+.search-button {
+  width: fit-content;
+  height: fit-content;
+  padding: u.em(6.5px) u.em(15px);
+  align-self: flex-end;
+  background-color: transparent;
+  color: u.$text-primary;
+  font-size: u.rem(19px);
+  border-radius: 9px;
+  border: u.$text-primary 2px solid;
+  outline: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.episodes {
+  font-size: u.rem(19.5px);
+  color: u.$text-primary-shader;
+  font-weight: 400;
+  margin: u.em(20px) u.em(10px) 0;
+  display: flex;
+  flex-direction: column;
+  gap: u.em(7.5px);
+  letter-spacing: 0.6px;
+
+  & span {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & button {
+    font-size: u.rem(16px);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: u.$text-secondary;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,62 @@
+@use "../../../scss/util" as u;
+
+.details {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  z-index: 1;
+
+  &__poster {
+    width: 100%;
+    border-radius: 15px;
+    height: auto;
+    align-self: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  &__genres {
+    display: flex;
+    justify-content: flex-start;
+    gap: u.em(15px);
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    margin: u.em(20px) 0 u.em(30px);
+
+    & span {
+      font-size: u.rem(17.5px);
+      color: u.$text-primary;
+      font-weight: 400;
+      padding: u.em(8px) u.em(16.5px);
+      background-color: #1e1e1ea7;
+      backdrop-filter: blur(15.5px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 7.5px;
+      letter-spacing: 0.7px;
+    }
+  }
+
+  &__params {
+    font-size: u.rem(18px);
+    font-weight: 400;
+    margin: u.em(8.5px) u.em(6px);
+    color: u.$text-secondary;
+    letter-spacing: 0.7px;
+
+    & span {
+      color: u.$text-primary;
+    }
+  }
+
+  &__description {
+    font-size: u.rem(18px);
+    font-weight: 400;
+    margin: u.em(17.5px) u.em(6px) 0;
+    padding-top: u.em(17.5px);
+    border-top: u.$text-primary-shader 1px solid;
+    color: u.$text-primary-shader;
+  }
+}

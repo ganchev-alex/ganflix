@@ -1,0 +1,14 @@
+@use "../../../scss/util" as u;
+
+.collections {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  position: relative;
+  z-index: 1;
+  margin: u.em(20px) 0 u.em(50px);
+}

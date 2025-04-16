@@ -1,0 +1,8 @@
+@use "../../scss/util" as u;
+
+.shelf {
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+  margin-top: -9%;
+}

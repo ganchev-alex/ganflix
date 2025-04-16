@@ -1,0 +1,73 @@
+@use "../../scss/util" as u;
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: u.$background-primary;
+  border-radius: 12.5px;
+  padding: u.em(20px);
+  gap: u.em(8.5px);
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 auto;
+
+  &__link {
+    position: relative;
+    z-index: 10;
+
+    &--active {
+      color: u.$text-primary !important;
+      transform: translateX(6.5px);
+
+      & img {
+        transform: rotate(-10deg);
+        filter: invert(100%) !important;
+      }
+    }
+  }
+
+  &__link,
+  &__link:visited {
+    color: u.$text-secondary;
+    text-decoration: none;
+    font-size: u.rem(18.5px);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: u.em(7.5px);
+    transition: all 0.3s ease;
+
+    & img {
+      width: 21.5px;
+      height: 21.5px;
+      transition: all 0.3s ease;
+      filter: invert(70%);
+    }
+
+    &:hover {
+      color: u.$text-primary;
+      transform: translateX(6.5px);
+
+      & img {
+        animation-delay: 0.2s;
+        transform: rotate(-10deg);
+        filter: invert(100%);
+      }
+    }
+  }
+
+  &__light {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: -25%;
+    right: -20%;
+    filter: blur(50px);
+    opacity: 0.2;
+    transition: all 0.3 ease-in;
+    background-size: cover;
+  }
+}

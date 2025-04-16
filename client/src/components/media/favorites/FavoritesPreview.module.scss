@@ -1,0 +1,83 @@
+@use "../../../scss/util" as u;
+
+.plane {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0 u.em(50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__title {
+    font-size: u.rem(43.5px);
+    color: u.$text-primary;
+    font-weight: 500;
+  }
+
+  &__subtitle {
+    color: u.$text-primary-shader;
+    font-weight: 300;
+    font-size: u.rem(20px);
+    margin-bottom: u.em(7.5px, 20px);
+  }
+
+  &__attributes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    gap: u.em(15px, 16px);
+
+    & p {
+      font-size: u.rem(20px);
+      font-weight: 400;
+      color: u.$text-primary;
+      margin: u.em(15px, 20px) 0;
+    }
+
+    & p:last-child {
+      border-left: u.$text-primary-shader 1px solid;
+      padding-left: u.em(15px, 16px);
+    }
+  }
+
+  &__description {
+    font-size: u.rem(17px);
+    color: u.$text-primary-shader;
+  }
+
+  &__controlls {
+    display: flex;
+    align-items: center;
+    gap: u.em(15px);
+    margin-top: u.em(27.5px);
+
+    & button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: u.em(7.5px);
+      width: fit-content;
+      height: fit-content;
+      font-size: u.rem(18px);
+      padding: u.em(9.5px, 18px) u.em(20px, 18px);
+      border-radius: 50px;
+      outline: none;
+      border: none;
+      background: rgba(112, 113, 116, 0.4);
+      color: u.$text-primary;
+
+      & img {
+        width: 17.5px;
+        height: 17.5px;
+        filter: invert(100%);
+      }
+    }
+
+    & button:last-child {
+      padding: u.em(9.5px, 16px);
+    }
+  }
+}

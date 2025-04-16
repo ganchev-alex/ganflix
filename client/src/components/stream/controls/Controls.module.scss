@@ -1,0 +1,45 @@
+@use "../../../scss/util" as u;
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: u.$background-primary;
+  border-radius: 12.5px;
+  padding: u.em(20px);
+  height: fit-content;
+  position: relative;
+  overflow-x: hidden;
+  flex-grow: 1;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__backlight {
+    width: 120%;
+    height: 30%;
+    position: absolute;
+    bottom: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(30px);
+    object-fit: cover;
+    animation: light 6s ease-in-out infinite;
+  }
+}
+
+@keyframes light {
+  0% {
+    opacity: 1;
+    filter: blur(60px);
+  }
+  50% {
+    opacity: 0.7;
+    filter: blur(30px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(60px);
+  }
+}

@@ -1,0 +1,50 @@
+@use "../../../scss/util" as u;
+
+.gallery {
+  display: flex;
+  width: fit-content;
+  height: u.em(115px);
+  position: absolute;
+  z-index: 5;
+  right: u.em(-125px);
+  top: 50%;
+  gap: u.em(25px);
+
+  & img {
+    height: u.em(125px);
+    width: u.em(200px);
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 12.5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  &__base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  &__next {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__flash {
+    position: relative;
+
+    & div {
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    & img {
+      opacity: 0.8;
+    }
+  }
+}

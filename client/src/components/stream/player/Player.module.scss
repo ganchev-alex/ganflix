@@ -1,0 +1,75 @@
+@use "../../../scss/util" as u;
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+
+  &__type {
+    position: relative;
+    z-index: 1;
+    font-size: u.rem(26px);
+    color: u.$text-primary;
+    font-weight: 500;
+    align-self: flex-start;
+    margin-bottom: u.em(12.5px);
+  }
+
+  &__title {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    font-size: u.rem(29.5px);
+    color: u.$text-primary;
+    margin: u.em(15px) 0 u.em(7.5px);
+    font-weight: 500;
+  }
+
+  &__subtitle {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    font-size: u.rem(23.5px);
+    font-weight: 400;
+    color: u.$text-primary-shader;
+  }
+
+  &__backlight {
+    position: absolute;
+    top: -10%;
+    width: 120%;
+    height: 65%;
+    object-fit: cover;
+    filter: blur(40px);
+    animation: light 6s ease-in-out infinite;
+  }
+
+  &__more {
+    width: 105%;
+    height: fit-content;
+    margin-top: u.em(20px);
+
+    & h3 {
+      font-size: u.rem(23.5px) !important;
+      margin-bottom: u.em(22.5px) !important;
+    }
+  }
+}
+
+@keyframes light {
+  0% {
+    opacity: 1;
+    filter: blur(50px);
+  }
+  50% {
+    opacity: 0.7;
+    filter: blur(25px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(50px);
+  }
+}

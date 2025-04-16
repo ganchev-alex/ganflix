@@ -1,0 +1,132 @@
+@use "../../scss/util" as u;
+
+.container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding: u.em(50px);
+  border-bottom: 1.5px u.$background-secondary dashed;
+
+  &__thumb {
+    width: 40%;
+    height: u.em(275px);
+    object-fit: contain;
+    border-radius: 15px;
+    position: relative;
+    transition: all 0.5s ease;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    &__backlight {
+      width: 115% !important;
+      height: 110% !important;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: blur(30px);
+      z-index: -1;
+      opacity: 0;
+      transition: all 0.6s ease;
+    }
+  }
+
+  &:hover &__thumb {
+    transform: scale(1.02) rotate(-2.5deg);
+  }
+
+  &:hover &__thumb__backlight {
+    opacity: 0.5;
+  }
+}
+
+.details {
+  display: flex;
+  width: 54%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  gap: u.em(12.5px);
+
+  &__title {
+    font-size: u.rem(30px);
+    color: u.$text-primary;
+    font-weight: 500;
+  }
+
+  &__tags {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: u.em(15px);
+
+    & span {
+      font-size: u.rem(20px);
+      color: u.$text-primary;
+      font-weight: 400;
+    }
+
+    & span:last-child {
+      padding-left: u.em(12px);
+      border-left: u.$text-primary 1px solid;
+    }
+  }
+
+  &__description {
+    font-size: u.rem(17.5px);
+    color: u.$text-primary-shader;
+  }
+
+  &__others {
+    display: flex;
+    gap: u.em(15px);
+    align-items: center;
+    color: u.$text-primary;
+
+    & span {
+      font-size: u.rem(18px);
+    }
+  }
+
+  &__controls {
+    gap: u.em(7px);
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+
+    & button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: u.em(7.5px);
+      width: fit-content;
+      height: fit-content;
+      font-size: u.rem(18px);
+      padding: u.em(9.5px, 18px) u.em(20px, 18px);
+      border-radius: 50px;
+      outline: none;
+      border: none;
+      background: rgba(112, 113, 116, 0.4);
+      color: u.$text-primary;
+
+      & img {
+        width: 17.5px;
+        height: 17.5px;
+        filter: invert(100%);
+      }
+    }
+
+    & button:last-child {
+      padding: u.em(11px, 18px);
+    }
+  }
+}

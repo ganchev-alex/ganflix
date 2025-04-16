@@ -1,0 +1,33 @@
+@use "../../../scss/util" as u;
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+  height: 50%;
+
+  &__notepad {
+    width: 100% !important;
+    height: 80% !important;
+    min-height: 350px;
+    resize: none;
+    padding: u.em(15px);
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    overflow-y: scroll;
+    font-family: u.$font;
+    font-size: u.rem(16.5px);
+    letter-spacing: 0.8px;
+    background: rgba(30, 30, 30, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: u.$text-primary;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

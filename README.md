@@ -8,6 +8,8 @@ Built with a clean and modern UI tailored to my own aesthetic preferences, Ganfl
 
 I’ve decided to share this project not only to demonstrate my technical proficiency but also to showcase a real-world, personal-use application that I’ve developed from scratch and genuinely use.
 
+![Poster](./documentation/poster.png)
+
 ### 🎫 Things to consider
 
 Ganflix is a personal-use project and is not designed for commercial or public streaming. The media it presents is locally stored on an external hard disk, and the app accesses that storage directly—no external video sources are used.
@@ -31,3 +33,25 @@ The app is uniquely integrated into an external hard disk, which allows me to ea
 ### 👀 Sneak Peek
 
 The UI of Ganflix is designed to be modern, clean, and intuitive, tailored to my personal taste while ensuring ease of use. The layout focuses on simplicity and clarity, making it easy to browse through movies and TV series, view details, and manage watchlists. The design incorporates vibrant colors, setting a cinema theater theme that makes the content pop and enhances the visual experience. With smooth animations and transitions, the app provides an enjoyable and seamless experience whether you're watching solo or with friends and family. The color scheme, typography, and overall design reflect a contemporary look, prioritizing functionality while making the content even more appealing.
+
+![Preview_1](./documentation/preview_1.png)
+
+---
+
+![Preview_2](./documentation/preview_2.png)
+
+---
+
+![Preview_3](./documentation/preview_3.png)
+
+---
+
+![Preview_4](./documentation/preview_4.png)
+
+---
+
+![Preview_5](./documentation/preview_5.png)
+
+---
+
+![Preview_6](./documentation/preview_6.png)
